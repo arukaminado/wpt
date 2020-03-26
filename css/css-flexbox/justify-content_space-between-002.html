@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<title>CSS Flexbox: justify-content: space-between on the last item of a row</title>
+<link rel="help" href="https://www.w3.org/TR/css-flexbox-1/#flex-containers">
+<link rel="help" href="https://www.w3.org/TR/css-flexbox-1/#justify-content-property">
+<meta name="assert" content="This test checks that justify-content: space-between on the last item of a row is not added to the row height.">
+<style>
+.flexbox {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 500px;
+}
+</style>
+<script src="/resources/testharness.js"></script>
+<script src="/resources/testharnessreport.js"></script>
+<script src="/resources/check-layout-th.js"></script>
+<body onload="checkLayout('.flexbox')">
+<div class="flexbox" data-expected-height="500">
+  <div>First item</div>
+  <div>Second item</div>
+</div>
